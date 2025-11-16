@@ -1,61 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PWA GPS</title>
-    <link rel="apple-touch-icon" href="images/pwa-icon-256.png" />
-    <link rel="stylesheet" href="css/style.css" />
-
-    <meta name="apple-touch-icon" content="images/pwa-icon-256.png" />
-    <link rel="manifest" href="manifest.json" />
-    <link rel="icon" href="favicon.ico">
-    <script type="manifest" src="manifest.json"></script>
-    <meta name="theme-color" content="width" />
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PWA - Camera</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="/images/icon-256_ios.png">
+  <link rel="icon" href="/images/camera_256.png" sizes="256x256" />
+  <meta name="theme-color" content="white" />
 </head>
+
 <body>
-  <section class="container">
-    <header class="cabecalho">
-      <h1 class="titulo">PWA - Geolocation</h1>
-    </header>
-
-    <div class="conteudo">
-      <header class="cabecalhoConteudo">
-        <h2>Geolocalização</h2>
-      </header>
-
-      <div class="conteudoLocalizacao">
-        <p>
-          Latitude: <span id="latitude">0.0</span>
-        </p>
-        <p>
-          Longitude: <span id="longitude">0.0</span>
-        </p>
-        <div>
-          <button class="botao" id="localizacao">Capturar Localização</button>
-        </div>
-      </div>
-      <div class="conteudoLocalizacao">
-        <input id="latitude"/>
-        <input id="lotitude"/>
-      </div>
-    </div>
-    <div class="mapouter">
-      <div class="gmap_canvas">
-        <iframe width="600" height="500" id="gmap_canvas"
-         src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-    </div>
-  </div>
-
-    <footer class="rodape">
-      Progressive Web Application - Geolocation
-    </footer>
-  </section>
-
-  <script src="js/main.js"></script>
-</body>
-
+  <!-- Câmera -->
+  <main id="camera">
+    <canvas id="camera--sensor"></canvas>
+    <video id="camera--view" autoplay playsinline></video>
+    <!-- <img src="//:0" alt="" id="camera--output"> -->
+    <h2 class="dados">Preencha seus dados </h2>
+    <input type="name" class="name" id="nome" placeholder="Digita seu Nome"/>
+    <input type="text" class="mensagem" id="mensagem" placeholder="Digite sua Descrição"/>
+    <button id="camera--trigger">Tirar Foto</button>
+  </main>
+ 
+  <h2 class="histo">Histórico de Fotos</h2>
+  <section id="historico"></section>
+  <script src="js/main.js" type="module"></script>
 </body>
 
 </html>

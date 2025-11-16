@@ -1,57 +1,139 @@
-body {
-  background-color: rgb(174, 174, 174);
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #000000;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 10px;
+    }
+
+    #camera {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    #camera--view {
+     border: rgb(255, 0, 204) solid 10px;
+     border-radius: 100%;
+     width: 300px;   
+     height: 300px;  
+     object-fit: cover; 
 }
 
-.container {
-  box-sizing: border-box;
-  max-width: 100%;
-  width: 960px;
-  margin: 0 auto;
-  padding: 1em;
-}
 
-.titulo {
-  text-align: center;
-  color: rgb(73, 71, 158);
-  font-size: 2em;
-}
+    video {
+      width: 90%;
+      height: 300px;
+      border-radius: 10px;
+      background: #000;
+    }
 
-.conteudo {
-  background-color: rgb(169, 164, 164);
-  margin: 1.5em 0;
-  box-shadow: 3px 3px 3px rgba(153, 154, 225, 0.3);
-  text-align: center;
-}
+    canvas {
+      display: none;
+    }
 
-.conteudoLocalizacao {
-  font-size: 1.5em;
-}
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
 
-.rodape {
-  text-align: center;
-  border-radius: 5%;
-}
+    button {
+      background-color: #00fff7;
+      color: #000000;
+    }
 
-.cabecalhoConteudo {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
+    .dados {
+      color: white;
+      margin-top: 20px;
+    }
+    #historico {
+      margin-top: 30px; 
+      width: 50%;
+      max-width: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      color: white;
+      gap: 10px;
+    }
 
-.botao {
-  background-color: rgba(69, 71, 163, 0.3);
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  width: 100%;
-}
+    .foto-item {
+      position: relative;
+    }
 
-.mapouter{
-    display: flex;
-    justify-content: center;
-}
+     img {
+      height: auto;
+      border: #000 solid 4px;
+      border-radius: 100%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      width: 150px;   
+      height: 150px;  
+      object-fit: cover; 
+    }
+
+    .histo {
+      color: white;
+    }
+
+    .btn-remover {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: rgba(255, 0, 0, 0.8);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 2px 5px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .name, .mensagem {
+      text-align: center;
+      margin-top: 10px;
+      padding: 8px;
+      width: 280px;
+      border: 2px solid #ff0000;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .card {
+      width: 150px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 10px;
+      color: #000000;
+      border: 2px solid #ff0000;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    p {
+  font-size: 12px;
+    }
+
+    h3 {
+      padding-top: 10px;
+      font-size: 16px;
+      margin: 5px 0;
+    }
