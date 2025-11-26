@@ -1,4 +1,3 @@
-// Registrando o Service Worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', async () => {
     try {
@@ -11,10 +10,8 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// configurando as constraintes do video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
 
-// capturando os elementos em tela
 const cameraView = document.querySelector("#camera--view"),
   cameraOutput = document.querySelector("#camera--output"),
   cameraSensor = document.querySelector("#camera--sensor"),
@@ -23,7 +20,6 @@ const cameraView = document.querySelector("#camera--view"),
   mensagem = document.querySelector("#mensagem"),
   historicoContainer = document.querySelector("#historico");
 
-//Estabelecendo o acesso a camera e inicializando a visualização
 function cameraStart() {
   navigator.mediaDevices
     .getUserMedia(constraints)
@@ -35,7 +31,6 @@ function cameraStart() {
     });
 }
 
-// === IndexedDB ===
 let db;
 const request = indexedDB.open("CameraDB", 1);
 
@@ -82,7 +77,6 @@ store.add(foto);
   transaction.onerror = (e) => console.error("Erro ao salvar foto:", e);
 }
 
-// Função para listar fotos salvas
 function listarFotos() {
   if (!db) return;
 
@@ -128,7 +122,6 @@ fotos.forEach((f) => {
   };
 }
 
-// Função para remover uma foto
 function removerFoto(id) {
   const transaction = db.transaction(["fotos"], "readwrite");
   const store = transaction.objectStore("fotos");
@@ -141,7 +134,6 @@ function removerFoto(id) {
   transaction.onerror = (e) => console.error("Erro ao remover foto:", e);
 }
 
-  // Função para tirar foto
 cameraTrigger.onclick = function () {
   cameraSensor.width = cameraView.videoWidth;
   cameraSensor.height = cameraView.videoHeight;
@@ -152,5 +144,4 @@ cameraTrigger.onclick = function () {
   savePhoto(imageData);
 };
 
-// carrega imagem de camera quando a janela carregar
 window.addEventListener("load", cameraStart, false);
