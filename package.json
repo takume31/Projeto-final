@@ -23,7 +23,8 @@
     "multer": "^2.0.2",
     "node": "^25.2.0",
     "sql": "^0.78.0",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "vercel": "^48.12.0"
   },
   "description": "",
   "main": "sw.js",
