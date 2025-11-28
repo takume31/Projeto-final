@@ -38,20 +38,19 @@ request.onupgradeneeded = function (event) {
   db = event.target.result;
   const store = db.createObjectStore("fotos", { keyPath: "id", autoIncrement: true });
   store.createIndex("data", "data", { unique: false });
-  console.log("Banco criado ou atualizado 📂");
+  console.log("Banco criado ou atualizado com sucesso");
 };
 
 request.onsuccess = function (event) {
   db = event.target.result;
-  console.log("Banco de dados aberto com sucesso ✅");
+  console.log("Banco de dados aberto com sucesso");
   listarFotos();
 };
 
 request.onerror = function (event) {
-  console.error("Erro ao abrir o banco de dados ❌", event);
+  console.error("Erro ao abrir o banco de dados", event);
 };
 
-// Função para salvar foto no banco
 function savePhoto(imageData) {
   if (!db) {
     console.error("Banco de dados não pronto!");
